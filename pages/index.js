@@ -19,7 +19,8 @@ const Homepage = (props) => {
 export async function getStaticProps() {
   // Fetching data from api
   const client = await MongoClient.connect(
-    "mongodb+srv://jason2004:Jason@7531@cluster0.ugnh0.mongodb.net/DigitalScrapbook?retryWrites=true&w=majority"
+    "mongodb+srv://jason2004:Jason@7531@cluster0.ugnh0.mongodb.net/DigitalScrapbook?retryWrites=true&w=majority",
+    { useUnifiedTopology: true }
   );
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
