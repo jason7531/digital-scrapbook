@@ -1,7 +1,20 @@
 import MeetupList from "../components/meetups/MeetupList";
 import { MongoClient } from "mongodb";
+import { Fragment } from "react";
+import Head from "next/head";
 const Homepage = (props) => {
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Digital Scrapbook</title>
+        <meta
+          name="description"
+          content="Browse a huge list of memories stored in your digital scrapbook"
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
+  );
 };
 
 // runs for every incoming requests use only if frequent changes
