@@ -49,7 +49,7 @@ export async function getStaticProps() {
       })),
     },
     // with revalidate it pre renders the page again in 100 secs not only during the build
-    revalidate: 100,
+    revalidate: 1,
   };
 }
 
